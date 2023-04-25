@@ -1,0 +1,30 @@
+<h1>Editar Filmes</h1>
+<%=link_to 'Home', root_path%>
+<hr>
+<%= form_with model: @movie do | f |%>
+    <%= f.label :title, 'Título: ' %>
+    <%= f.text_field :title %> <br/>
+
+    <%= f.label :release_year, 'Ano de lançamento: ' %>
+    <%= f.number_field :release_year %> <br/>
+
+    <%= f.label :synopsis, 'Sinopse: ' %>
+    <%= f.text_area :synopsis %> <br/>
+
+    <%= f.label :nationality, 'Nacionalidade' %>
+    <%= f.text_field :nationality %> <br/>
+
+    <%= f.label :duration, 'Duração(m): ' %>
+    <%= f.number_field :duration %> <br/>
+
+     <%= f.label 'Diretor(a): ' %>
+    <%= f.collection_select :director_id, Director.all, :id, :name %> <br/>
+
+    <%= f.label 'Gênero: ' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %> <br/>
+
+    <%= f.label :image, 'Imagem de capa' %>
+    <%= f.file_field :image %><br/>
+
+    <%= f.submit 'Enviar' %>
+<% end %>

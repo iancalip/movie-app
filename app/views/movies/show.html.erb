@@ -1,0 +1,11 @@
+<h1><%=@movie.title%></h1>
+<p><%=@movie.release_year%> | <%= @movie.duration%>m</p>
+<%=link_to 'Home', root_path%>
+<%= link_to 'Editar', edit_movie_path %>
+<hr>
+
+<%= image_tag @movie.image, class: "movie-image"%><br/>
+<strong>Nacionalidade:</strong> <%=@movie.nationality%><br/>
+<strong>Dirigido por:</strong> <%=link_to @movie.director.name, director_path(id: @movie.director.id) %><br/>
+<strong>Gênero:</strong> <%=link_to @movie.genre.name, genre_path(id: @movie.genre.id)%><br/>
+<strong>Sinopse:</strong> <%=@movie.synopsis%><br/>

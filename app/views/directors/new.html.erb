@@ -1,0 +1,18 @@
+<h1>Cadastro de diretor(a) cinematográfico</h1>
+<%=link_to 'Home', root_path%>
+<hr>
+<%= form_with model: @director do | f |%>
+    <%= f.label :name, 'Nome: ' %>
+    <%= f.text_field :name %> <br/>
+
+    <%= f.label :nationality, 'Nacionalidade' %>
+    <%= f.text_field :nationality %> <br/>
+
+    <%= f.label :date_of_birth, 'Data de nascimento' %>
+    <%= f.date_field :date_of_birth %> <br/>
+
+    <%= f.label 'Gênero principal' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %> <br/>
+
+    <%= f.submit 'Enviar' %>
+<% end %>

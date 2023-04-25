@@ -1,0 +1,9 @@
+<h1>Catálogo de filmes</h1>
+<%= link_to 'Diretores', directors_path%>
+<%= link_to 'Gêneros', genres_path%>
+<hr>
+
+<%= render partial: 'movies/movie_display', locals: { movies: @movies }%>
+
+<%= link_to 'Cadastro de filme', new_movie_path%>
+

@@ -1,0 +1,8 @@
+<h1>Filmes dirigidos por <%=@director.name%></h1>
+<%=link_to 'Home', root_path%>
+<%= link_to 'Editar', edit_director_path %>
+<hr>
+
+<%= render partial: 'movies/movie_display', locals: { movies: @director.movies }%>
+
+

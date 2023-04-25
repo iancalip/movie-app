@@ -1,0 +1,8 @@
+<h1> Diretores </h1>
+<%=link_to 'Home', root_path%>
+<hr>
+<% @directors.each do |director| %>
+  <h3><%= link_to director.name, director_path(director) %></h3>
+<% end %>
+
+<%= link_to 'Registrar diretor(a)', new_director_path %> <br/>

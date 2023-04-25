@@ -1,0 +1,22 @@
+.movie-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+
+  .movie-container {
+    flex: 0 0 auto;
+    margin-right: 80px;
+  }
+
+  .movie-details {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
