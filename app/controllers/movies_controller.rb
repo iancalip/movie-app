@@ -17,10 +17,10 @@ class MoviesController < ApplicationController
         @movie = Movie.new(movie_params)
         if @movie.save
             flash[:notice] = 'Movie was successfully created.'
-            redirect_to @movie
+            redirect_to root_path
         else
             flash.now[:notice] = 'Preencha todos os campos corretamente'
-            render :new, status: :unprocessable_entity
+            render :new
         end
     end
 
